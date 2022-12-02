@@ -30,14 +30,12 @@ func printAnswers(s string) {
 func getAnswers(s string) (int, int) {
 	calories := make([]int, 1)
 	ss := strings.Split(s, "\n")
-	skrat := 0
 	for i := range ss {
 		atoi, err := strconv.Atoi(ss[i])
 		if err != nil || ss[i] == "" {
-			skrat++
 			calories = append(calories, 0)
 		} else {
-			calories[skrat] = calories[skrat] + atoi
+			calories[len(calories)-1] = calories[len(calories)-1] + atoi
 		}
 	}
 	sort.Ints(calories)
