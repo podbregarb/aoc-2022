@@ -38,9 +38,9 @@ func main() {
 }
 
 func printAnswers(s string) {
-	highestCalories, highestThree := getAnswers(s)
-	fmt.Printf("First answer: %d\n", highestCalories)
-	fmt.Printf("Second answer: %d\n", highestThree)
+	first, second := getAnswers(s)
+	fmt.Printf("First answer: %d\n", first)
+	fmt.Printf("Second answer: %d\n", second)
 }
 
 func getAnswers(s string) (int, int) {
