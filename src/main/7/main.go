@@ -25,18 +25,6 @@ func printAnswers(s string) {
 }
 
 func getAnswers(s string) (int, int) {
-	return getIndex(s, 4), getIndex(s, 14)
-}
 
-func getIndex(s string, numOfChars int) int {
-	for i := numOfChars - 1; i <= len(s)-1; i++ {
-		chars := make(map[string]int, 0)
-		for j := 0; j < numOfChars; j++ {
-			chars[string(s[i-j])] = 0
-		}
-		if len(chars) == numOfChars {
-			return i + 1
-		}
-	}
-	return -1
+	return 0, 0
 }
