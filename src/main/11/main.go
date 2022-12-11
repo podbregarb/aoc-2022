@@ -40,7 +40,7 @@ func getMonkeyActivity(split []string, rounds int, worried bool) int {
 		lcm *= monkeys[i].divisibleBy
 	}
 	doRounds(monkeys, rounds, worried, lcm)
-	// Find most active monkeysWorried
+	// Find most active monkeys
 	monkeyActivity := make([]int, 0)
 	for monkeyIndex := 0; monkeyIndex < len(monkeys); monkeyIndex++ {
 		monkeyActivity = append(monkeyActivity, monkeys[monkeyIndex].numOfInspectedItems)

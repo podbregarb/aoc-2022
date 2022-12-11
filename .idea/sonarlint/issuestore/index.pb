@@ -19,8 +19,6 @@ B
 src/main/2/main.go,b/4/b4b915ddbddf6d55ff418e3bf66c29179d264c2f
 B
 src/main/3/main.go,6/6/66830fb492e00e3efd4376fefa64f2f5074afc0f
-B
-src/main/1/main.go,b/6/b643d06770285b2c2b14dee0a4c0d7dce9312ec8
 D
 src/main/3/input.txt,7/3/736ee3bea9fcd203ef5055174d0a0754c3a77fae
 D
