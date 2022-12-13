@@ -61,9 +61,7 @@ func getVisitedPositions(s string, ropeLength int) []string {
 				ropePositions[0] = moveDown(ropePositions[0])
 			}
 			for ropePartIndex := 1; ropePartIndex < len(ropePositions); ropePartIndex++ {
-				if !arePointsTouching(ropePositions[ropePartIndex-1], ropePositions[ropePartIndex]) {
-					ropePositions[ropePartIndex] = moveToHead(ropePositions[ropePartIndex], ropePositions[ropePartIndex-1], ropePartIndex)
-				}
+				ropePositions[ropePartIndex] = moveToHead(ropePositions[ropePartIndex], ropePositions[ropePartIndex-1], ropePartIndex)
 			}
 			stringPoint := fmt.Sprintf("%d,%d", ropePositions[len(ropePositions)-1].x, ropePositions[len(ropePositions)-1].y)
 			_, contained := contains(visitedTailPositions, stringPoint)
@@ -122,10 +120,6 @@ func moveUp(p point) point {
 }
 func moveDown(p point) point {
 	return point{p.x, p.y - 1}
-}
-
-func arePointsTouching(p point, r point) bool {
-	return distance(p, r) <= 1
 }
 
 func distance(p point, r point) float64 {
