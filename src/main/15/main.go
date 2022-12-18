@@ -38,9 +38,8 @@ func getDistressBeacon(sensorsAndBeacons map[Point]Point, distressBeaconLocation
 		for x := 0; x <= distressBeaconLocationLimit; x++ {
 			for sensor, beacon := range sensorsAndBeacons {
 				distanceSensorBeacon := getManhattanDistance(sensor, beacon)
-				distanceSensorPoint := getManhattanDistance(Point{x, y}, sensor)
-				if distanceSensorPoint <= distanceSensorBeacon {
-					x += distanceSensorBeacon - distanceSensorPoint
+				if getManhattanDistance(Point{x, y}, sensor) <= distanceSensorBeacon {
+					x += distanceSensorBeacon - abs(sensor.y-y) + (sensor.x - x)
 					continue loop
 				}
 			}
